@@ -1,9 +1,9 @@
 //////////HEADER AND MAIN CONTENT//////////
 header {
-  padding-top: 15px;
+  padding-top: 7px;
   padding-bottom: 15px;
   background-color: #f5f5f5;
-  height: 30px;
+  height: 34px;
   border-bottom: 1px solid #e5e5e5;
 }
 .nav-container {
@@ -21,7 +21,22 @@ header {
     display: inline-block;
   }
   }
+}
+.navigation-list {
+  display: inline-block;
+  padding: 0;
+  li {
+    display: inline-block;
+    padding: 0px 5px;
+    font-size: .75em;
+    font-weight: bold;
+  }
+}
 
+.nav-right-container {
+  float: right;
+  height: 25px;
+  margin-top: 10px;
 }
 .main-content {
   margin: 0 auto;
@@ -29,7 +44,10 @@ header {
   width: 80%;
   padding-top: 20px;
 }
-
+.nav-profile-pic {
+  width: 20px;
+  height: 20px;
+}
 //////////ASIDE//////////
 
 aside {
@@ -40,6 +58,17 @@ aside {
   img {
     width: 230px;
     height: 230px;
+  }
+  h1 {
+    margin-top: 0px;
+    margin-bottom:0px;
+    color: #333;
+  }
+  h2 {
+    font-weight: 300;
+    color: #666;
+    margin: 0;
+    font-size: 1.3em;
   }
   a {
     float: left;
@@ -64,6 +93,19 @@ aside {
   width: 42px;
   height: 42px;
 }
+.profile-info-container {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.joined-date-container {
+  border-top: 1px #e5e5e5 solid;
+  border-bottom: 1px #e5e5e5 solid;
+}
+.stats-block {
+  height: 44px;
+  padding-top: 25px;
+}
+
 
 //////////SECTION//////////
 
@@ -134,7 +176,7 @@ section {
 //////////SECOND BLOCK - 'LIST OF REPOSITORIES'//////////
 
 .boxed-group-flush-two {
-  display: none;
+  display: block;
   ul {
     list-style-type: none;
     padding: 0;
@@ -149,10 +191,11 @@ section {
   }
 }
 
-footer {
-  background-color: green;
-  height: 99px;
+.filter-bar li {
+  display: inline-block;
 }
+
+
 
 .branch {
   float: right;
@@ -161,9 +204,15 @@ footer {
 //////////THIRD BLOCK - 'NEW FEED THING'//////////
 
 .boxed-group-flush-three {
-  display: block;
+  display: none;
 }
 .alert-create-simple-body {
   padding: 15px 0;
   background: lightgrey;
+}
+
+
+footer {
+  background-color: lightgrey;
+  height: 99px;
 }

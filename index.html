@@ -15,6 +15,17 @@
         <nav>
           <span class="mega-octicon octicon-mark-github"></span> <input name="name" placeholder=
           "Search Git Hub" type="text" value="">
+          <ul class ="navigation-list">
+            <li>Pull requests</li>
+            <li>Issues</li>
+            <li>Gist</li>
+          </ul>
+          <div class="nav-right-container">
+            <span class="octicon octicon-plus"></span>
+            <span class="octicon octicon-triangle-down"></span>
+            <img class="nav-profile-pic" src="" alt="" />
+            <span class="octicon octicon-triangle-down"></span>
+          </div>
         </nav>
       </div>
     </header>
@@ -22,13 +33,15 @@
     <div class="main-content">
       <aside>
         <img class="profile-pic" alt="profile pic" src="">
-        <h1 class='name'></h1>
-        <h2 class='username'></h2>
-        <p>
-          Joined on...
-        </p>
-        <time class="date-joined-text" datetime="">
-        </time>
+        <div class="profile-info-container">
+          <h1 class='name'></h1>
+          <h2 class='username'></h2>
+        </div>
+        <div class="joined-date-container">
+          <p>
+            Joined on...
+          </p>
+        </div>
 
         <div class="stats-block">
           <a href="www.google.com"><span class="stat-number-followers"></span></a>
@@ -40,7 +53,7 @@
           <p>
             Organizations
           </p>
-          <img alt="" src="images/temp-pic.png">
+          <img class="org" alt="org pic" src="">
         </div>
       </aside>
 
@@ -141,115 +154,7 @@
             </div>
 
             <ul>
-              <li>
-                <a class="mini-repo-list" href="#"><span class="repo-list-name">Repo Name</span>
-                <span class="repo-descrip">Repo Descrip</span> <span class="repo-descrip">Updated
-                On</span></a>
-                <div class="repo-class-stats">
-                  <a class="branch" href="#"><span class="octicon octicon-git-branch"></span>
-                  <span>0</span></a> <a class="star" href="#"><span class=
-                  "octicon octicon-star"></span> <span>0</span></a> <span class=
-                  "programming-language">JavaScript</span>
-                </div>
-              </li>
-
-              <li>
-                <a class="mini-repo-list" href="#"><span class="repo-list-name">Repo Name</span>
-                <span class="repo-descrip">Repo Descrip</span> <span class="repo-descrip">Updated
-                On</span></a>
-                <div class="repo-class-stats">
-                  <a class="branch" href="#"><span class="octicon octicon-git-branch"></span>
-                  <span>0</span></a> <a class="star" href="#"><span class=
-                  "octicon octicon-star"></span> <span>0</span></a> <span class=
-                  "programming-language">JavaScript</span>
-                </div>
-              </li>
-
-              <li>
-                <a class="mini-repo-list" href="#"><span class="repo-list-name">Repo Name</span>
-                <span class="repo-descrip">Repo Descrip</span> <span class="repo-descrip">Updated
-                On</span></a>
-                <div class="repo-class-stats">
-                  <a class="branch" href="#"><span class="octicon octicon-git-branch"></span>
-                  <span>0</span></a> <a class="star" href="#"><span class=
-                  "octicon octicon-star"></span> <span>0</span></a> <span class=
-                  "programming-language">JavaScript</span>
-                </div>
-              </li>
-
-              <li>
-                <a class="mini-repo-list" href="#"><span class="repo-list-name">Repo Name</span>
-                <span class="repo-descrip">Repo Descrip</span> <span class="repo-descrip">Updated
-                On</span></a>
-                <div class="repo-class-stats">
-                  <a class="branch" href="#"><span class="octicon octicon-git-branch"></span>
-                  <span>0</span></a> <a class="star" href="#"><span class=
-                  "octicon octicon-star"></span> <span>0</span></a> <span class=
-                  "programming-language">JavaScript</span>
-                </div>
-              </li>
-
-              <li>
-                <a class="mini-repo-list" href="#"><span class="repo-list-name">Repo Name</span>
-                <span class="repo-descrip">Repo Descrip</span> <span class="repo-descrip">Updated
-                On</span></a>
-                <div class="repo-class-stats">
-                  <a class="branch" href="#"><span class="octicon octicon-git-branch"></span>
-                  <span>0</span></a> <a class="star" href="#"><span class=
-                  "octicon octicon-star"></span> <span>0</span></a> <span class=
-                  "programming-language">JavaScript</span>
-                </div>
-              </li>
-
-              <li>
-                <a class="mini-repo-list" href="#"><span class="repo-list-name">Repo Name</span>
-                <span class="repo-descrip">Repo Descrip</span> <span class="repo-descrip">Updated
-                On</span></a>
-                <div class="repo-class-stats">
-                  <a class="branch" href="#"><span class="octicon octicon-git-branch"></span>
-                  <span>0</span></a> <a class="star" href="#"><span class=
-                  "octicon octicon-star"></span> <span>0</span></a> <span class=
-                  "programming-language">JavaScript</span>
-                </div>
-              </li>
-
-              <li>
-                <a class="mini-repo-list" href="#"><span class="repo-list-name">Repo Name</span>
-                <span class="repo-descrip">Repo Descrip</span> <span class="repo-descrip">Updated
-                On</span></a>
-                <div class="repo-class-stats">
-                  <a class="branch" href="#"><span class="octicon octicon-git-branch"></span>
-                  <span>0</span></a> <a class="star" href="#"><span class=
-                  "octicon octicon-star"></span> <span>0</span></a> <span class=
-                  "programming-language">JavaScript</span>
-                </div>
-              </li>
-
-              <li>
-                <a class="mini-repo-list" href="#"><span class="repo-list-name">Repo Name</span>
-                <span class="repo-descrip">Repo Descrip</span> <span class="repo-descrip">Updated
-                On</span></a>
-                <div class="repo-class-stats">
-                  <a class="branch" href="#"><span class="octicon octicon-git-branch"></span>
-                  <span>0</span></a> <a class="star" href="#"><span class=
-                  "octicon octicon-star"></span> <span>0</span></a> <span class=
-                  "programming-language">JavaScript</span>
-                </div>
-              </li>
-
-              <li>
-                <a class="mini-repo-list" href="#"><span class="repo-list-name">Repo Name</span>
-                <span class="repo-descrip">Repo Descrip</span> <span class="repo-descrip">Updated
-                On</span></a>
-                <div class="repo-class-stats">
-                  <a class="branch" href="#"><span class="octicon octicon-git-branch"></span>
-                  <span>0</span></a> <a class="star" href="#"><span class=
-                  "octicon octicon-star"></span> <span>0</span></a> <span class=
-                  "programming-language">JavaScript</span>
-                </div>
-              </li>
-
-              <li>
+              <!-- <li>
                 <a class="mini-repo-list" href="#"><span class="repo-list-name">Repo Name</span>
                 <span class="repo-descrip">Repo Descrip</span> <span class="repo-descrip">Updated
                 On</span></a>
@@ -261,6 +166,9 @@
                 </div>
               </li>
             </ul>
+          </div> -->
+          <div id="repos">
+
           </div>
 
           <div class="boxed-group-flush-three">

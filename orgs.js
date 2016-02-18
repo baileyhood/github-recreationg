@@ -12,4 +12,4 @@ public_members_url: "https://api.github.com/orgs/TIY-Charleston-Front-End-Februa
 avatar_url: "https://avatars.githubusercontent.com/u/16307857?v=3",
 description: null
 }
-]
+];
