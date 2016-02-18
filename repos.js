@@ -967,4 +967,4 @@ open_issues: 0,
 watchers: 0,
 default_branch: "master"
 }
-]
+];

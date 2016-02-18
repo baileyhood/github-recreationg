@@ -29,7 +29,9 @@ header {
   display: inline-block;
   padding: 0px 5px;
   font-size: .75em;
-  font-weight: bold; }
+  font-weight: bold;
+  margin: 0;
+  vertical-align: 4px; }
 
 .nav-right-container {
   float: right;
@@ -111,7 +113,10 @@ section {
 
 .sub-navigation li {
   display: inline-block;
-  list-style-type: none; }
+  list-style-type: none;
+  color: #666;
+  font-size: .9em;
+  padding: 0 15px; }
 
 .filter-bar input[type=text] {
   width: 266px; }
@@ -135,9 +140,6 @@ section {
   margin-top: 25px;
   margin-bottom: 25px; }
 
-.mini-repo-list {
-  display: inline-block; }
-
 .repo-and-owner {
   display: inline-block; }
 
@@ -160,14 +162,14 @@ section {
 
 .boxed-group-flush-two ul {
   list-style-type: none;
-  padding: 0; }
+  padding: 0;
+  margin: 0; }
 
 .boxed-group-flush-two a {
   text-decoration: none;
   color: inherit; }
 
 .boxed-group-flush-two li {
-  margin-top: 25px;
   margin-bottom: 25px; }
 
 .filter-bar li {
@@ -175,6 +177,26 @@ section {
 
 .branch {
   float: right; }
+
+.repoTitle {
+  color: #4078c0;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold; }
+
+.repoDescrip {
+  font-size: 13px;
+  color: #666; }
+
+.repoContainer {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+
+.progLang {
+  float: right;
+  font-size: 12px;
+  font-weight: bold;
+  color: #888; }
 
 .boxed-group-flush-three {
   display: none; }
