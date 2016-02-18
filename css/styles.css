@@ -163,14 +163,17 @@ section {
 .boxed-group-flush-two ul {
   list-style-type: none;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  font-size: 14px; }
 
 .boxed-group-flush-two a {
   text-decoration: none;
   color: inherit; }
 
 .boxed-group-flush-two li {
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  margin-left: 12px;
+  color: #4078c0; }
 
 .filter-bar li {
   display: inline-block; }
@@ -182,15 +185,22 @@ section {
   color: #4078c0;
   text-decoration: none;
   font-size: 20px;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-bottom: 8px; }
+
+.repoTitle p {
+  margin: 0; }
 
 .repoDescrip {
-  font-size: 13px;
-  color: #666; }
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px; }
 
 .repoContainer {
   padding-top: 30px;
-  padding-bottom: 30px; }
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee; }
 
 .progLang {
   float: right;
@@ -198,12 +208,58 @@ section {
   font-weight: bold;
   color: #888; }
 
-.boxed-group-flush-three {
-  display: none; }
+.updatedAt {
+  font-size: 12px;
+  color: #888; }
+
+.repoContainer-leftcol {
+  display: inline-block; }
+
+.repoContainer-rightcol {
+  display: inline-block;
+  float: right; }
+
+.stargazers-url {
+  margin-left: 12px; }
+
+.forks-url {
+  float: right;
+  margin-left: 12px; }
 
 .alert-create-simple-body {
   padding: 15px 0;
   background: lightgrey; }
+
+.alert-push {
+  margin-bottom: 47px;
+  border-bottom: 1px solid #f1f1f1; }
+
+.alert-push p {
+  margin: 0; }
+
+.icon-wrapper {
+  display: inline-block;
+  vertical-align: top; }
+
+.events-right-col {
+  display: inline-block; }
+
+.events-username {
+  display: inline-block; }
+
+.events-master {
+  display: inline-block;
+  margin: 0 6px; }
+
+.events-repoName {
+  display: inline-block; }
+
+.events-profilePic {
+  display: inline-block;
+  width: 30px; }
+
+.inactive {
+  display: none; }
 
 footer {
   background-color: lightgrey;
