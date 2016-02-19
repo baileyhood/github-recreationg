@@ -25,16 +25,7 @@ navItem.click(function(event) {
 
 //Pulling Repos Data
 
-var cleanData = function (data) {
-  if (data === 'null') {
-    return '';
-  }
-  else {
-    return data;
-  }
-};
 
-cleanData(repos.language);
 
 var sortRepos = function(repos) { //sorting by date
     return _.sortBy(repos, 'updated_at').reverse();
@@ -48,7 +39,7 @@ _.each(sortRepos(repos), function(el) {
     repoDataList += "<div class =  'updatedAt'>" + "Updated " + moment(el.updated_at,"YYYYMMDDH").fromNow() + "</div>";
     repoDataList += "</div>";
     repoDataList += "<div class = 'repoContainer-rightcol'>";
-    repoDataList += "<div class = 'progLang'>" + el.language + //write if/else to remove null
+    repoDataList += "<div class = 'progLang'>" + el.language  + //write if/else to remove null
         "<a href='' class ='stargazers-url'>" + "<span class='octicon octicon-star'>" + el.stargazers_count +
         "</span>" + "<a>";
     repoDataList += "<a href='' class ='forks-url'>" +
@@ -58,32 +49,6 @@ _.each(sortRepos(repos), function(el) {
     repoDataList += "</div>";
 });
 $('.mini-repo-list').append(repoDataList);
-
-
-
-
-//Pulling Events Data
-
-//
-function eventsMap (list) {
-var eventsObj = list.map(function(el) {
-  if (el.type === "PushEvent") {
-    return {
-        username: el.actor.login,
-        time: el.created_at,
-        master: el.payload.ref,
-        repoName: el.repo.name,
-        profilePic: el.actor.avatar_url,
-        commitNum: el.payload.head,
-        message: el.payload.commits[0].message,
-    };
-}
-});
-}
-// var sortEvents = function(events) { //sorting by date //Sort last
-//     return _.sortBy(events, 'created_at').reverse();
-// };
-
 
 
     function eventsHTML(eventsData) {

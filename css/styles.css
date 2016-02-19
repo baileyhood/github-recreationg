@@ -98,7 +98,8 @@ aside span {
 .joined-date-container {
   border-top: 1px #e5e5e5 solid;
   border-bottom: 1px #e5e5e5 solid;
-  color: #333; }
+  color: #333;
+  font-size: 14px; }
 
 .stats-block {
   height: 44px;
@@ -141,7 +142,7 @@ section {
   padding-top: 20px; }
 
 .filter-bar input[type=text] {
-  width: 266px; }
+  width: 222px; }
 
 .filter-bar ul {
   display: inline-block; }
@@ -197,7 +198,8 @@ section {
   color: #4078c0; }
 
 .filter-bar li {
-  display: inline-block; }
+  display: inline-block;
+  padding: 0 5px; }
 
 .branch {
   float: right; }

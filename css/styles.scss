@@ -103,6 +103,7 @@ aside {
   border-top: 1px #e5e5e5 solid;
   border-bottom: 1px #e5e5e5 solid;
   color: #333;
+  font-size: 14px;
 }
 .stats-block {
   height: 44px;
@@ -153,7 +154,7 @@ section {
   padding-top: 20px;
 
         input[type=text] {
-          width: 266px;
+          width: 222px;
         }
         ul {
           display: inline-block;
@@ -218,6 +219,7 @@ section {
 
 .filter-bar li {
   display: inline-block;
+  padding: 0 5px;
 }
 
 
