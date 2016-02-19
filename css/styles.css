@@ -258,6 +258,9 @@ section {
   display: inline-block;
   width: 30px; }
 
+.eventsRepoWrapper {
+  background-color: red; }
+
 .inactive {
   display: none; }
 

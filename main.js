@@ -53,47 +53,69 @@ $('.mini-repo-list').append(repoDataList);
 
 //Pulling Events Data
 
-
-var eventsObj = events.map(function(el) {
-    if (el.payload.commits) {
-      var commitMsg = el.payload.commits[0].message;
-    } else {
-      var commitMsg = "";
-    }
+//
+function eventsMap (list) {
+var eventsObj = list.map(function(el) {
+  if (el.type === "PushEvent") {
     return {
         username: el.actor.login,
         time: el.created_at,
-        master: el.payload.master_branch,
+        master: el.payload.ref,
         repoName: el.repo.name,
         profilePic: el.actor.avatar_url,
         commitNum: el.payload.head,
-        message: commitMsg,
+        message: el.payload.commits[0].message,
     };
+}
 });
-
+}
 // var sortEvents = function(events) { //sorting by date //Sort last
 //     return _.sortBy(events, 'created_at').reverse();
 // };
+    function eventsHTML(eventsData) {
+    var eventsDataList = "";
+    eventsData.forEach(function(el) {
+        if (el.type === "PushEvent") {
+            eventsDataList += "<div class ='alert-push'>";
+            eventsDataList += "<div class = 'icon-wrapper'>";
+            eventsDataList += "<span class='mega-octicon octicon-git-commit'></span>";
+            eventsDataList += "</div>";
+            eventsDataList += "<div class = 'events-right-col'>";
+            eventsDataList += "<div class = 'events-right-col-title'>";
+            eventsDataList += "<div class= 'events-time'> <p>" + el.created_at + "</p></div>";
+            eventsDataList += "<div class= 'events-username'> <p>" + el.actor.login +
+                " pushed to " + "</p></div>";
+            eventsDataList += "<div class= 'events-master'> <p>" + el.payload.ref+
+                "</p></div>";
+            eventsDataList += "<div class= 'events-repoName'> <p>" + "at " + el.repo.name +
+                "</p></div>";
+            eventsDataList += "</div>";
+            eventsDataList += "<img class= 'events-profilePic' src='" + el.actor.avatar_url+
+                "' alt=''/>";
+            eventsDataList += "<span class='octicon octicon-mark-github'></span>";
+            eventsDataList += "<div class ='events-commits'<p>" + el.payload.head +
+                "</p></div>";
+            eventsDataList += "<div class ='events-message'<p>" + el.payload.commits[0].message +
+                "</p></div>";
+            eventsDataList += "</div>";
+            eventsDataList += "</div>"; //end of 'alert push div'
+        }
+      else if (el.type === "CreateEvent" && el.payload.ref_type === "repository")  {
+        eventsDataList += "<div class = 'eventsRepoWrapper'>";
+        eventsDataList += "<div class= 'events-create-username'> <p>" + el.actor.login + "</p></div>";
+        eventsDataList +=  "<p>" + " created repository " + "</p>";
+        eventsDataList += "<div class= 'events-create-url'> <p>" + el.repo.name  + "</p></div>";
+        eventsDataList += "<div class= 'events-create-time'> <p>" + moment(el.created_at, "YYYYMMDDH").fromNow() + "</p></div>";
+        eventsDataList += "</div>"; //end of 'eventsRepoWrapper'
+      }
 
-var eventsDataList="";
-eventsObj.forEach (function(el) {
-  eventsDataList+= "<div class ='alert-push'>";
-  eventsDataList+= "<div class = 'icon-wrapper'>";
-  eventsDataList+= "<span class='mega-octicon octicon-git-commit'></span>";
-  eventsDataList+= "</div>";
-  eventsDataList+= "<div class = 'events-right-col'>";
-  eventsDataList+= "<div class = 'events-right-col-title'>";
-  eventsDataList+= "<div class= 'events-time'> <p>" + el.time + "</p></div>";
-  eventsDataList+= "<div class= 'events-username'> <p>" + el.username + " pushed to " + "</p></div>";
-  eventsDataList+= "<div class= 'events-master'> <p>" + el.master + "</p></div>";
-  eventsDataList+= "<div class= 'events-repoName'> <p>" + "at " + el.repoName + "</p></div>";
-eventsDataList+= "</div>";
-  eventsDataList+= "<img class= 'events-profilePic' src='"  + el.profilePic +  "' alt=''/>";
-  eventsDataList+= "<span class='octicon octicon-mark-github'></span>";
-  eventsDataList+= "<div class ='events-commits'<p>" + el.commitNum + "</p></div>";
-  eventsDataList+= "<div class ='events-message'<p>" + el.message + "</p></div>";
-  eventsDataList+= "</div>";
-  eventsDataList+= "</div>"; //end of 'alert push div'
-
-});
-$('.alert-create-simple').append(eventsDataList);
+      else if (el.type == "CreateEvent" && el.payload.ref_type === "branch") {
+        eventsDataList += "<div class= 'events-create-username'> <p>" + el.actor.login + " created branch " + "</p></div>";
+        eventsDataList += "<div class= 'events-create-branch'> <p>" +  el.payload.ref_type + " at " + "</p></div>";
+        eventsDataList += "<div class= 'events-create-repourl'> <p>" +  el.repo.url +  "</p></div>";
+        eventsDataList += "<div class= 'events-create-time'> <p>" + moment(el.created_at, "YYYYMMDDH").fromNow() + "</p></div>";
+      }
+    });
+    $('.alert-create-simple').append(eventsDataList);
+}
+eventsHTML(events);
