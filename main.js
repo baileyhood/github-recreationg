@@ -3,13 +3,13 @@ $(document).ready(function() {
     $(".nav-profile-pic").attr("src", users.avatar_url);
     $(".name").text(users.name);
     $(".username").text(users.login);
-    $(".date-joined-text").text(users.created_at);
+    $(".date-joined-text").prepend("<span class='octicon octicon-clock'></span>").text("Joined on ").append(moment(users.created_at).format('ll'));
     $(".stat-number-followers").text(users.followers);
     // $(".stat-number-starred").text(users.starred_url)
     $(".stat-number-following").text(users.following);
     $(".org").attr("src", orgs[0].avatar_url);
 
-});
+
 
 
 //toggling for main nav
@@ -25,6 +25,17 @@ navItem.click(function(event) {
 
 //Pulling Repos Data
 
+var cleanData = function (data) {
+  if (data === 'null') {
+    return '';
+  }
+  else {
+    return data;
+  }
+};
+
+cleanData(repos.language);
+
 var sortRepos = function(repos) { //sorting by date
     return _.sortBy(repos, 'updated_at').reverse();
 };
@@ -34,7 +45,7 @@ _.each(sortRepos(repos), function(el) {
     repoDataList += "<div class = 'repoContainer-leftcol'>";
     repoDataList += "<div class='repoTitle'> <p> " + el.name + "</p></div>"; //need to add link
     repoDataList += "<div class =  'repoDescrip'>" + el.description + "</div>";
-    repoDataList += "<div class =  'updatedAt'>" + "Updated on " + el.updated_at + "</div>";
+    repoDataList += "<div class =  'updatedAt'>" + "Updated " + moment(el.updated_at,"YYYYMMDDH").fromNow() + "</div>";
     repoDataList += "</div>";
     repoDataList += "<div class = 'repoContainer-rightcol'>";
     repoDataList += "<div class = 'progLang'>" + el.language + //write if/else to remove null
@@ -135,6 +146,7 @@ var eventsObj = list.map(function(el) {
         eventsDataList += "</div>";
       }
     });
-    $('.alert-create-simple').append(eventsDataList)._sortBy(events, 'created_at').reverse();
+    $('.alert-create-simple').append(eventsDataList);
 }
 eventsHTML(events);
+});

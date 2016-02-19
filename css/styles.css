@@ -97,16 +97,31 @@ aside span {
 
 .joined-date-container {
   border-top: 1px #e5e5e5 solid;
-  border-bottom: 1px #e5e5e5 solid; }
+  border-bottom: 1px #e5e5e5 solid;
+  color: #333; }
 
 .stats-block {
   height: 44px;
-  padding-top: 25px; }
+  padding-top: 25px;
+  padding-top: 11px;
+  padding-bottom: 11px; }
+
+.date-joined-text {
+  display: inline-block; }
+
+.stat-number-followers {
+  color: #4078c0; }
 
 section {
   height: 100%;
   display: inline-block;
-  width: 73.9%; }
+  width: 73.6%;
+  margin-left: 3px; }
+
+.sub-navigation {
+  width: 100%;
+  color: #666;
+  border-bottom: 1px solid #ddd; }
 
 .sub-navigation ul {
   padding: 0; }
@@ -117,6 +132,13 @@ section {
   color: #666;
   font-size: .9em;
   padding: 0 15px; }
+
+.sub-navigation a {
+  text-decoration: none;
+  color: #666; }
+
+.filter-bar {
+  padding-top: 20px; }
 
 .filter-bar input[type=text] {
   width: 266px; }
@@ -172,7 +194,6 @@ section {
 
 .boxed-group-flush-two li {
   margin-bottom: 25px;
-  margin-left: 12px;
   color: #4078c0; }
 
 .filter-bar li {
@@ -232,7 +253,8 @@ section {
 
 .alert-push {
   margin-bottom: 17px;
-  border-bottom: 1px solid #f1f1f1; }
+  border-bottom: 1px solid #f1f1f1;
+  padding-top: 13px; }
 
 .alert-push p {
   margin: 0; }
@@ -286,8 +308,7 @@ section {
   width: 30px; }
 
 .eventsRepoWrapper {
-  border-bottom: 1px solid #f1f1f1;
-  margin-bottom: 15px; }
+  border-bottom: 1px solid #f1f1f1; }
 
 .events-commits {
   display: inline-block;
