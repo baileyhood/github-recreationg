@@ -5,7 +5,7 @@ $(document).ready(function() {
     $(".username").text(users.login);
     $(".date-joined-text").text(users.created_at);
     $(".stat-number-followers").text(users.followers);
-    // $(".stat-number-starred").text(users.starred_url) //couldn't figure this out?
+    // $(".stat-number-starred").text(users.starred_url)
     $(".stat-number-following").text(users.following);
     $(".org").attr("src", orgs[0].avatar_url);
 
@@ -72,6 +72,9 @@ var eventsObj = list.map(function(el) {
 // var sortEvents = function(events) { //sorting by date //Sort last
 //     return _.sortBy(events, 'created_at').reverse();
 // };
+
+
+
     function eventsHTML(eventsData) {
     var eventsDataList = "";
     eventsData.forEach(function(el) {
@@ -82,40 +85,56 @@ var eventsObj = list.map(function(el) {
             eventsDataList += "</div>";
             eventsDataList += "<div class = 'events-right-col'>";
             eventsDataList += "<div class = 'events-right-col-title'>";
-            eventsDataList += "<div class= 'events-time'> <p>" + el.created_at + "</p></div>";
-            eventsDataList += "<div class= 'events-username'> <p>" + el.actor.login +
-                " pushed to " + "</p></div>";
-            eventsDataList += "<div class= 'events-master'> <p>" + el.payload.ref+
+            eventsDataList += "<div class= 'events-time'> <p>" + moment(el.created_at,"YYYYMMDDH").fromNow() + "</p></div>";
+            eventsDataList += "<a href='" + el.actor.url + "' + class= 'events-username'> <p>" + el.actor.login + "</p></a>";
+            eventsDataList += "<p>"  +  " pushed to "  + "</p>";
+            eventsDataList += "<div class= 'events-master'> <p>" + el.payload.ref.slice(11)+
                 "</p></div>";
-            eventsDataList += "<div class= 'events-repoName'> <p>" + "at " + el.repo.name +
+            eventsDataList += "<p>" + " "+" at  " + "</p>";
+            eventsDataList += "<div class= 'events-repoName'> <p>" + " " + el.repo.name +
                 "</p></div>";
             eventsDataList += "</div>";
             eventsDataList += "<img class= 'events-profilePic' src='" + el.actor.avatar_url+
                 "' alt=''/>";
-            eventsDataList += "<span class='octicon octicon-mark-github'></span>";
-            eventsDataList += "<div class ='events-commits'<p>" + el.payload.head +
+            eventsDataList += "<div class = 'events-descrip-container'";
+            eventsDataList += "<span class='octicon octicon-bookmark'></span>";
+            eventsDataList += "<div class ='events-commits'<p>" + el.payload.head.slice(-7) +
                 "</p></div>";
             eventsDataList += "<div class ='events-message'<p>" + el.payload.commits[0].message +
                 "</p></div>";
+            eventsDataList += "</div>";
             eventsDataList += "</div>";
             eventsDataList += "</div>"; //end of 'alert push div'
         }
       else if (el.type === "CreateEvent" && el.payload.ref_type === "repository")  {
         eventsDataList += "<div class = 'eventsRepoWrapper'>";
+        eventsDataList += "<div class = 'icon-wrapper-events-repo'>";
+        eventsDataList += "<span class='octicon octicon-repo'</span>";
+        eventsDataList += "</div>";
+        eventsDataList += "<div class = 'events-right-col-create-repo'>";
         eventsDataList += "<div class= 'events-create-username'> <p>" + el.actor.login + "</p></div>";
         eventsDataList +=  "<p>" + " created repository " + "</p>";
         eventsDataList += "<div class= 'events-create-url'> <p>" + el.repo.name  + "</p></div>";
         eventsDataList += "<div class= 'events-create-time'> <p>" + moment(el.created_at, "YYYYMMDDH").fromNow() + "</p></div>";
+        eventsDataList += "</div>"; //end of 'events-right-col-create-repo'
         eventsDataList += "</div>"; //end of 'eventsRepoWrapper'
       }
 
       else if (el.type == "CreateEvent" && el.payload.ref_type === "branch") {
-        eventsDataList += "<div class= 'events-create-username'> <p>" + el.actor.login + " created branch " + "</p></div>";
-        eventsDataList += "<div class= 'events-create-branch'> <p>" +  el.payload.ref_type + " at " + "</p></div>";
-        eventsDataList += "<div class= 'events-create-repourl'> <p>" +  el.repo.url +  "</p></div>";
+        eventsDataList += "<div class = 'eventsBranchWrapper'>";
+        eventsDataList += "<div class = 'icon-wrapper-events-branch'>";
+        eventsDataList += "<span class='octicon octicon-git-branch'></span>";
+        eventsDataList += "</div>";
+        eventsDataList += "<div class = 'events-right-col-create-branch'>";
+        eventsDataList += "<div class= 'events-create-username'> " + el.actor.login + "</div>";
+        eventsDataList += "<p> " + " created branch " + "</p>";
+        eventsDataList += "<div class= 'events-create-branch'> <p>" +  el.payload.master_branch + " at " + "</p></div>";
+        eventsDataList += "<div class= 'events-create-repourl'> <p>" +  el.repo.name +  "</p></div>";
         eventsDataList += "<div class= 'events-create-time'> <p>" + moment(el.created_at, "YYYYMMDDH").fromNow() + "</p></div>";
+        eventsDataList += "</div>";
+        eventsDataList += "</div>";
       }
     });
-    $('.alert-create-simple').append(eventsDataList);
+    $('.alert-create-simple').append(eventsDataList)._sortBy(events, 'created_at').reverse();
 }
 eventsHTML(events);

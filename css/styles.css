@@ -231,7 +231,7 @@ section {
   background: lightgrey; }
 
 .alert-push {
-  margin-bottom: 47px;
+  margin-bottom: 17px;
   border-bottom: 1px solid #f1f1f1; }
 
 .alert-push p {
@@ -239,27 +239,126 @@ section {
 
 .icon-wrapper {
   display: inline-block;
-  vertical-align: top; }
+  vertical-align: top;
+  color: #bbb; }
 
 .events-right-col {
-  display: inline-block; }
+  display: inline-block;
+  margin-left: 12px;
+  margin-bottom: 14px; }
+
+.events-right-col p {
+  display: inline-block;
+  font-size: 14px; }
+
+.events-right-col-title {
+  margin-bottom: 4px; }
+
+.events-time {
+  font-size: 12px;
+  color: #bbb; }
 
 .events-username {
-  display: inline-block; }
+  display: inline-block;
+  color: #4078c0;
+  font-weight: bold;
+  font-size: 14px;
+  margin-right: 5px; }
 
 .events-master {
   display: inline-block;
-  margin: 0 6px; }
+  margin: 0 6px;
+  color: #4078c0;
+  font-weight: bold; }
+
+.events-master p {
+  font-size: 14px; }
 
 .events-repoName {
-  display: inline-block; }
+  display: inline-block;
+  color: #4078c0;
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 6px; }
 
 .events-profilePic {
   display: inline-block;
   width: 30px; }
 
 .eventsRepoWrapper {
-  background-color: red; }
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 15px; }
+
+.events-commits {
+  display: inline-block;
+  color: #4078c0;
+  margin: 0 6px;
+  font-size: 14px; }
+
+.events-message {
+  display: inline-block;
+  color: #666;
+  font-size: 14px; }
+
+.events-descrip-container {
+  display: inline-block;
+  vertical-align: top; }
+
+.icon-wrapper-events-repo {
+  display: inline-block;
+  color: #bbb; }
+
+.events-right-col-create-repo {
+  display: inline-block;
+  margin-left: 12px;
+  font-size: 13px;
+  color: #666; }
+
+.events-right-col-create-repo p {
+  display: inline-block;
+  margin-right: 9px; }
+
+.events-create-username {
+  display: inline-block;
+  color: #4078c0;
+  margin-right: 12px; }
+
+.events-create-url {
+  display: inline-block;
+  margin-right: 12px;
+  color: #4078c0; }
+
+.events-create-time {
+  display: inline-block;
+  margin-right: 12px;
+  color: #bbb; }
+
+.eventsBranchWrapper {
+  border-bottom: 1px solid #f1f1f1; }
+
+.eventsBranchWrapper p {
+  display: inline-block; }
+
+.events-create-branch {
+  display: inline-block; }
+
+.events-create-repourl {
+  display: inline-block;
+  color: #4078c0; }
+
+.icon-wrapper-events-branch {
+  display: inline-block;
+  color: #bbb; }
+
+.events-right-col-create-branch {
+  display: inline-block;
+  margin-left: 12px;
+  margin-left: 12px;
+  font-size: 13px;
+  color: #666; }
+
+.events-right-col-create-branch p {
+  margin-right: 12px; }
 
 .inactive {
   display: none; }
